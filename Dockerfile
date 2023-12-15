@@ -12,6 +12,8 @@ RUN cmake -S liboqs -B liboqs/build -DBUILD_SHARED_LIBS=ON && \
     cmake --build liboqs/build --parallel 4 && \
     cmake --build liboqs/build --target install
 
+RUN code --install-extension ms-vscode-makefile-tools
+
 # Enable a normal user
 RUN useradd -m -c "Open Quantum Safe" oqs
 USER oqs
