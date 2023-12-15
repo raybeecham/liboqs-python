@@ -1,0 +1,19 @@
+.PHONY: all build install activate automatic
+
+all: build install activate
+
+build:
+	cmake -S liboqs-0.9.0 -B liboqs/build -DBUILD_SHARED_LIBS=ON
+	make -C liboqs/build -j 8
+
+install:
+	sudo make -C liboqs/build install
+
+activate:
+	# . venv/bin/activate
+
+	# automatic: .PHONY
+	# make -C .deps/
+
+automatic:
+	make -C .deps/
